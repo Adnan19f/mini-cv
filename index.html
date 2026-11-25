@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+  <!-- Podaci o stranici (ne vide se u sadržaju) -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Adnan Fetić">
+  <meta name="description" content="Lični web portfolio: Adnan Fetić, student elektrotehnike i informacionih tehnologija iz Zenice.">
+  <meta name="keywords" content="Adnan Fetić, portfolio, CV, web, Zenica, CodeFactory">
+  <title data-en="Adnan Fetić | Portfolio">Adnan Fetić | Portfolio</title>
+
+  <!-- Povezivanje sa drugim datotekama -->
+  <link rel="icon" href="images/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/jezik.js" defer></script>
+</head>
+<body>
+
+  <!-- ZAGLAVLJE: isto na svim stranicama -->
+  <header class="zaglavlje">
+    <a class="logo" href="index.html">Adnan Fetić</a>
+
+    <nav class="meni" aria-label="Glavni meni">
+      <ul>
+        <li><a href="index.html" aria-current="page" data-en="Home">Početna</a></li>
+        <li><a href="about.html" data-en="About">O meni</a></li>
+        <li><a href="projects.html" data-en="Projects">Projekti</a></li>
+        <li><a href="contact.html" data-en="Contact">Kontakt</a></li>
+      </ul>
+    </nav>
+
+    <button class="jezik" id="jezik" type="button" aria-label="Promijeni jezik / Change language">
+      <span class="jezik-bs">BS</span>
+      <span class="jezik-en">EN</span>
+    </button>
+  </header>
+
+  <main>
+
+    <!-- UVOD: ime, kratka biografija i fotografija -->
+    <section class="uvod">
+      <div class="uvod-tekst">
+        <h1>Adnan<br>Fetić</h1>
+        <p class="uloga" data-en="Full Stack Developer and mentor at CodeFactory">Full Stack Developer i mentor u CodeFactory</p>
+        <p class="bio" data-en="First year student of electrical engineering and information technologies. I work mostly on the frontend, in Next.js and TypeScript, with the help of AI tools, and next to my studies I also work in production.">Student sam prve godine elektrotehnike i informacionih tehnologija. Najviše radim na frontendu, u Next.js-u i TypeScriptu, uz pomoć AI alata, a uz studij radim i u proizvodnji.</p>
+        <p class="dugmad">
+          <a class="dugme" href="projects.html" data-en="View projects">Pogledaj projekte</a>
+          <a class="dugme dugme-prazno" href="contact.html" data-en="Get in touch">Javi mi se</a>
+        </p>
+      </div>
+      <img class="portret" src="images/profile.jpg" alt="Portret Adnana Fetića: naočale, crna košulja, tamna pozadina" width="800" height="800">
+    </section>
+
+    <!-- ISTAKNUTO: informacija o studiju -->
+    <section class="studij">
+      <div class="okvir">
+        <h2 data-en="Electrical Engineering and Information Technologies">Elektrotehnika i informacione tehnologije</h2>
+        <p data-en="First year student at the Faculty of Engineering and Natural Sciences, University of Zenica. Part of the very first generation of this program.">Prva godina na Fakultetu inženjerstva i prirodnih nauka, Univerzitet u Zenici. Prva generacija ovog studijskog programa.</p>
+      </div>
+    </section>
+
+    <!-- ČIME SE BAVIM: definicijska lista (dl, dt, dd) -->
+    <section class="sekcija okvir">
+      <h2 data-en="What I do">Čime se bavim</h2>
+      <dl class="usluge">
+        <dt data-en="Websites and apps">Web stranice i aplikacije</dt>
+        <dd data-en="Work across the stack, most often on the frontend: Next.js, TypeScript and Supabase.">Rad kroz cijeli stack, najčešće na frontendu: Next.js, TypeScript i Supabase.</dd>
+
+        <dt data-en="Online stores">Online prodavnice</dt>
+        <dd data-en="Design and setup of Shopify stores for real clients.">Dizajn i postavka Shopify prodavnica za stvarne klijente.</dd>
+
+        <dt data-en="Automation">Automatizacija</dt>
+        <dd data-en="Make.com and AI tools. Example: AI news posted to social media automatically.">Make.com i AI alati. Primjer: automatske objave AI vijesti na društvenim mrežama.</dd>
+
+        <dt data-en="Testing">Testiranje</dt>
+        <dd data-en="I test products before release and write down every issue before anyone starts fixing it.">Testiram proizvode prije objave i zapišem svaku grešku prije nego što je iko krene popravljati.</dd>
+      </dl>
+    </section>
+
+    <!-- NAJVEĆA LEKCIJA: citat -->
+    <section class="sekcija okvir citat">
+      <h2 data-en="Biggest lesson">Najveća lekcija</h2>
+      <blockquote>
+        <p data-en="Before fixing a bug, first prove it exists and write down exactly when it happens.">Prije nego što popraviš grešku, prvo dokaži da postoji i zapiši tačno kad se javlja.</p>
+      </blockquote>
+    </section>
+
+  </main>
+
+  <!-- PODNOŽJE: isto na svim stranicama -->
+  <footer class="podnozje">
+    <div class="okvir">
+      <p>&copy; 2026 Adnan Fetić, Zenica</p>
+      <ul>
+        <li><a href="mailto:adnan.ba.fetic@gmail.com">E-mail</a></li>
+        <li><a href="https://www.linkedin.com/in/adnanfetic" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/Adnan19f" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>

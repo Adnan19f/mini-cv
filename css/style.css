@@ -1,0 +1,959 @@
+/* ==========================================================
+   MINI CV: Adnan Fetić
+   Jedna CSS datoteka za sve stranice.
+
+   SADRŽAJ
+    1. Font i paleta boja
+    2. Osnovna pravila
+    3. Naslovi, paragrafi, linkovi
+    4. Raspored (okvir, sekcija, dvije kolone)
+    5. Zaglavlje i meni
+    6. Dugmad
+    7. Početna stranica
+    8. Naslov stranice
+    9. Liste
+   10. Vještine (progress)
+   11. Iskustvo i tabela
+   12. Galerija projekata
+   13. Kontakt i forma
+   14. Podnožje
+   15. Animacija
+   16. Mobilni prikaz
+   ========================================================== */
+
+
+/* 1. FONT I PALETA BOJA
+   ---------------------------------------------------------- */
+@font-face {
+  font-family: "Archivo";
+  src: url("../fonts/archivo.woff2") format("woff2");
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  font-display: swap;
+}
+
+:root {
+  --noc: #0f131c;
+  --noc-svjetlija: #1b2230;
+  --zlatna: #f0b03f;
+  --zlatna-tamna: #8a5600;
+  --papir: #f2f4f8;
+  --bijela: #fbfcfe;
+  --tekst: #1a2130;
+  --tekst-blijedi: #545e70;
+  --tekst-na-tamnom: #eceff5;
+  --blijedo-na-tamnom: #aab4c6;
+  --linija: #d3d9e3;
+  --crvena: #b3261e;
+}
+
+
+/* 2. OSNOVNA PRAVILA
+   ---------------------------------------------------------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Da zaglavlje ne prekrije polje na koje stranica skoči */
+html {
+  scroll-padding-top: 7rem;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--papir);
+  color: var(--tekst);
+  font-family: "Archivo", Arial, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+
+body.tamna {
+  background-color: var(--noc);
+  color: var(--tekst-na-tamnom);
+}
+
+main {
+  flex: 1;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+:focus-visible {
+  outline: 3px solid var(--zlatna);
+  outline-offset: 3px;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+
+/* 3. NASLOVI, PARAGRAFI, LINKOVI
+   ---------------------------------------------------------- */
+h1, h2, h3 {
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: clamp(3rem, 9vw, 7.5rem);
+  font-weight: 800;
+  font-stretch: 125%;
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+}
+
+h2 {
+  font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+  font-weight: 750;
+  font-stretch: 112%;
+  letter-spacing: -0.02em;
+  margin-bottom: 2rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+p {
+  max-width: 65ch;
+}
+
+p + p {
+  margin-top: 1rem;
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 0.2em;
+}
+
+.istaknuto {
+  font-size: clamp(1.25rem, 2.2vw, 1.6rem);
+  font-weight: 600;
+  line-height: 1.4;
+  text-wrap: balance;
+}
+
+
+/* 4. RASPORED
+   ---------------------------------------------------------- */
+.okvir {
+  width: 100%;
+  max-width: 76rem;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.sekcija {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+/* Kad su dvije sekcije jedna do druge, dovoljan je jedan razmak */
+.sekcija + .sekcija {
+  padding-top: 0;
+}
+
+.dvije-kolone {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 4rem;
+}
+
+
+/* 5. ZAGLAVLJE I MENI
+   ---------------------------------------------------------- */
+.zaglavlje {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem 1.5rem;
+  background-color: var(--noc);
+  color: var(--tekst-na-tamnom);
+}
+
+.logo {
+  margin-right: auto;
+  font-size: 1.125rem;
+  font-weight: 800;
+  font-stretch: 120%;
+  text-decoration: none;
+}
+
+.meni ul {
+  display: flex;
+  gap: 1.75rem;
+  list-style: none;
+}
+
+.meni a {
+  position: relative;
+  display: block;
+  padding: 0.5rem 0;
+  color: var(--blijedo-na-tamnom);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.25s;
+}
+
+/* Zlatna linija ispod linka, raste kad se pređe mišem */
+.meni a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0.25rem;
+  width: 100%;
+  height: 2px;
+  background-color: var(--zlatna);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s;
+}
+
+.meni a:hover,
+.meni a[aria-current="page"] {
+  color: var(--tekst-na-tamnom);
+}
+
+.meni a:hover::after,
+.meni a[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+
+.jezik {
+  display: flex;
+  padding: 3px;
+  border: 1px solid #3a4457;
+  border-radius: 8px;
+  background: none;
+  color: var(--blijedo-na-tamnom);
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.jezik span {
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
+  transition: background-color 0.25s, color 0.25s;
+}
+
+/* Označen je onaj jezik koji piše u <html lang="..."> */
+html[lang="bs"] .jezik-bs,
+html[lang="en"] .jezik-en {
+  background-color: var(--zlatna);
+  color: var(--noc);
+}
+
+
+/* 6. DUGMAD
+   ---------------------------------------------------------- */
+.dugme {
+  display: inline-block;
+  padding: 0.85rem 1.6rem;
+  border: 2px solid var(--zlatna);
+  border-radius: 8px;
+  background-color: var(--zlatna);
+  color: var(--noc);
+  font: inherit;
+  font-weight: 700;
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.25s, color 0.25s, transform 0.25s;
+}
+
+.dugme:hover {
+  background-color: #ffc862;
+  border-color: #ffc862;
+  transform: translateY(-3px);
+}
+
+.dugme-prazno {
+  background-color: transparent;
+  color: var(--tekst-na-tamnom);
+}
+
+.dugme-prazno:hover {
+  color: var(--noc);
+}
+
+.dugmad {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-top: 1.25rem;
+}
+
+
+/* 7. POČETNA STRANICA
+   ---------------------------------------------------------- */
+.uvod {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: min(50rem, calc(100vh - 4.5rem));
+  padding: 3rem max(1.5rem, calc((100vw - 73rem) / 2));
+  overflow: hidden;
+  background-color: var(--noc);
+  color: var(--tekst-na-tamnom);
+}
+
+.uvod-tekst {
+  position: relative;
+  z-index: 1;
+  max-width: 38rem;
+}
+
+.uvod h1 {
+  font-size: clamp(4rem, 9vw, 7.5rem);
+}
+
+.uloga {
+  margin-top: 1.75rem;
+  color: var(--zlatna);
+  font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+  font-weight: 650;
+}
+
+.bio {
+  max-width: 32rem;
+  font-size: 1.125rem;
+  line-height: 1.7;
+}
+
+/* Maska pravi meke ivice, pa se portret stopi sa pozadinom */
+.portret {
+  position: absolute;
+  right: max(0rem, calc((100vw - 84rem) / 2));
+  bottom: 0;
+  width: auto;
+  height: 100%;
+  max-width: none;
+  mask-image: linear-gradient(to right, transparent, black 30%, black 75%, transparent);
+}
+
+.studij {
+  padding: 4.5rem 0;
+  background-color: var(--zlatna);
+  color: var(--noc);
+}
+
+.studij .okvir {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  align-items: end;
+  gap: 3rem;
+}
+
+.studij h2 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 800;
+  font-stretch: 120%;
+  line-height: 1;
+}
+
+.studij p {
+  font-size: 1.125rem;
+  font-weight: 550;
+}
+
+.usluge {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+}
+
+.usluge dt,
+.usluge dd {
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--linija);
+}
+
+.usluge dt {
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.citat {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+}
+
+.citat blockquote p {
+  font-size: clamp(1.4rem, 2.6vw, 2.1rem);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+
+/* 8. NASLOV STRANICE
+   ---------------------------------------------------------- */
+.naslov {
+  padding: 5rem 0 4rem;
+  background-color: var(--noc);
+  color: var(--tekst-na-tamnom);
+}
+
+.naslov-nizak {
+  padding: 2.5rem 0 2rem;
+}
+
+.naslov-nizak .okvir {
+  max-width: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+}
+
+.naslov-nizak h1 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+}
+
+.naslov-nizak p {
+  color: var(--blijedo-na-tamnom);
+}
+
+
+/* 9. LISTE
+   ---------------------------------------------------------- */
+.lista {
+  list-style: none;
+}
+
+.lista li {
+  padding: 0.7rem 0;
+  border-top: 1px solid var(--linija);
+}
+
+.lista li::before {
+  content: "→";
+  margin-right: 0.75rem;
+  color: var(--zlatna-tamna);
+  font-weight: 700;
+}
+
+
+/* 10. VJEŠTINE
+   ---------------------------------------------------------- */
+.vjestine {
+  padding: 5rem 0;
+  background-color: var(--bijela);
+}
+
+.nivoi {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.75rem 4rem;
+  margin-bottom: 4rem;
+  list-style: none;
+}
+
+.nivoi li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.4rem 1rem;
+}
+
+.nivoi label {
+  font-weight: 650;
+}
+
+.nivoi span {
+  color: var(--tekst-blijedi);
+}
+
+progress {
+  appearance: none;
+  width: 100%;
+  height: 10px;
+  border: none;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: var(--linija);
+}
+
+/* Chrome i Safari */
+progress::-webkit-progress-bar {
+  background-color: var(--linija);
+}
+
+progress::-webkit-progress-value {
+  background-color: var(--zlatna);
+}
+
+/* Firefox */
+progress::-moz-progress-bar {
+  background-color: var(--zlatna);
+}
+
+.vjestine .dvije-kolone {
+  grid-template-columns: 1fr 1fr;
+}
+
+
+/* 11. ISKUSTVO I TABELA
+   ---------------------------------------------------------- */
+.iskustvo {
+  list-style: none;
+}
+
+.iskustvo li {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 2rem;
+  padding: 1.75rem 0;
+  border-top: 1px solid var(--linija);
+}
+
+.period {
+  color: var(--zlatna-tamna);
+  font-weight: 650;
+}
+
+.tabela-okvir {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  min-width: 36rem;
+  border-collapse: collapse;
+  background-color: var(--bijela);
+}
+
+caption {
+  padding-bottom: 1rem;
+  color: var(--tekst-blijedi);
+  text-align: left;
+}
+
+th, td {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--linija);
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background-color: var(--noc);
+  color: var(--tekst-na-tamnom);
+}
+
+tbody tr {
+  transition: background-color 0.25s;
+}
+
+tbody tr:hover {
+  background-color: #fdf1d8;
+}
+
+
+/* 12. GALERIJA PROJEKATA
+   ---------------------------------------------------------- */
+.galerija {
+  display: flex;
+  gap: 1rem;
+  height: 76vh;
+  min-height: 38rem;
+  padding: 0 1.5rem 4rem;
+}
+
+.projekat {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  background-color: var(--noc-svjetlija);
+  transition: flex 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Kad se pređe mišem ili dođe tipkom Tab, kartica se proširi */
+.projekat:hover,
+.projekat:focus-within {
+  flex: 3;
+}
+
+/* Slika zauzima gornji dio kartice, crno-bijela dok je zatvorena */
+.projekat img {
+  width: 100%;
+  height: 78%;
+  object-fit: cover;
+  object-position: top;
+  filter: grayscale(1) brightness(0.85);
+  transition: filter 0.6s;
+}
+
+.projekat:hover img,
+.projekat:focus-within img {
+  filter: none;
+}
+
+/* Tekst ima tamnu pozadinu koja prema gore postaje providna.
+   Kako se detalji otvaraju, pozadina raste zajedno sa tekstom. */
+.projekat-tekst {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 6rem 1.5rem 1.5rem;
+  background: linear-gradient(to top, var(--noc-svjetlija) calc(100% - 6rem), transparent);
+}
+
+.projekat h2 {
+  margin: 0;
+  font-size: clamp(1.15rem, 1.7vw, 2rem);
+  font-stretch: 100%;
+}
+
+.vrsta {
+  color: var(--zlatna);
+  font-size: 0.9375rem;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+/* Detalji su zatvoreni (0 visine) dok kartica nije otvorena */
+.detalji {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  visibility: hidden;
+  transition: grid-template-rows 0.5s, opacity 0.3s, visibility 0.5s;
+}
+
+.detalji > div {
+  width: 38vw;
+  max-width: 34rem;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.projekat:hover .detalji,
+.projekat:focus-within .detalji {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0.15s;
+}
+
+.detalji .period {
+  margin: 0.5rem 0 0;
+  color: var(--blijedo-na-tamnom);
+}
+
+.oznake {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.25rem 0 1.5rem;
+  list-style: none;
+}
+
+.oznake li {
+  padding: 0.2rem 0.7rem;
+  border: 1px solid #4a556a;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.detalji .dugme {
+  margin: 3px 0;
+}
+
+.detalji .dugme:hover {
+  transform: none;
+}
+
+
+/* 13. KONTAKT I FORMA
+   ---------------------------------------------------------- */
+.kontakt {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 5rem;
+}
+
+.podaci {
+  margin-top: 2.5rem;
+}
+
+.podaci dt {
+  padding-top: 1rem;
+  border-top: 1px solid var(--linija);
+  color: var(--tekst-blijedi);
+  font-size: 0.9375rem;
+}
+
+.podaci dd {
+  padding-bottom: 1rem;
+  font-weight: 650;
+  overflow-wrap: anywhere;
+}
+
+.podaci a {
+  transition: color 0.25s;
+}
+
+.podaci a:hover {
+  color: var(--zlatna-tamna);
+}
+
+.polje {
+  margin-bottom: 1.5rem;
+}
+
+.polje label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 650;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 2px solid #8a94a6;
+  border-radius: 8px;
+  background-color: var(--bijela);
+  color: var(--tekst);
+  font: inherit;
+  transition: border-color 0.25s;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--zlatna-tamna);
+  outline: none;
+}
+
+.polje .neispravno {
+  border-color: var(--crvena);
+}
+
+.greska {
+  margin-top: 0.4rem;
+  color: var(--crvena);
+  font-size: 0.9375rem;
+  font-weight: 550;
+}
+
+.uspjeh {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  border-radius: 8px;
+  background-color: #fdf1d8;
+}
+
+.uspjeh p {
+  margin-bottom: 1rem;
+}
+
+
+/* 14. PODNOŽJE
+   ---------------------------------------------------------- */
+.podnozje {
+  padding: 2.5rem 0;
+  background-color: var(--noc);
+  color: var(--blijedo-na-tamnom);
+}
+
+.podnozje .okvir,
+.podnozje ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  list-style: none;
+}
+
+.podnozje .okvir {
+  justify-content: space-between;
+}
+
+.podnozje a {
+  transition: color 0.25s;
+}
+
+.podnozje a:hover {
+  color: var(--zlatna);
+}
+
+
+/* 15. ANIMACIJA
+   ---------------------------------------------------------- */
+@keyframes pojava {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.uvod-tekst > *,
+.naslov h1 {
+  animation: pojava 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.uvod-tekst > :nth-child(2) { animation-delay: 0.12s; }
+.uvod-tekst > :nth-child(3) { animation-delay: 0.22s; }
+.uvod-tekst > :nth-child(4) { animation-delay: 0.32s; }
+
+.portret {
+  animation: pojava 1.2s 0.1s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+/* Ko je u sistemu isključio animacije, ne dobija ih ni ovdje */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+
+/* 16. MOBILNI PRIKAZ
+   ---------------------------------------------------------- */
+
+/* Tableti i manji ekrani */
+@media (max-width: 1024px) {
+  .dvije-kolone,
+  .vjestine .dvije-kolone,
+  .studij .okvir,
+  .kontakt {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .citat {
+    grid-template-columns: 1fr;
+  }
+
+  .sekcija,
+  .vjestine {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  /* Uvod: slika ide ispod teksta */
+  .uvod {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: 0;
+  }
+
+  .portret {
+    position: static;
+    align-self: center;
+    width: 100%;
+    max-width: 30rem;
+    height: auto;
+    margin-top: 1rem;
+  }
+
+  /* Galerija: projekti jedan ispod drugog, svi otvoreni */
+  .galerija {
+    flex-direction: column;
+    gap: 1.5rem;
+    height: auto;
+  }
+
+  .projekat,
+  .projekat:hover,
+  .projekat:focus-within {
+    flex: none;
+  }
+
+  .projekat img {
+    height: 16rem;
+    filter: none;
+  }
+
+  .projekat-tekst {
+    position: static;
+    padding-top: 1.25rem;
+    background: none;
+  }
+
+  .detalji {
+    grid-template-rows: 1fr;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .detalji > div {
+    width: 100%;
+    max-width: none;
+  }
+
+  .naslov-nizak p {
+    display: none;
+  }
+}
+
+/* Telefoni */
+@media (max-width: 600px) {
+  .zaglavlje {
+    flex-wrap: wrap;
+    gap: 0.25rem 1rem;
+    padding: 0.75rem 1.25rem;
+  }
+
+  .meni {
+    order: 3;
+    width: 100%;
+  }
+
+  .meni ul {
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  .nivoi,
+  .usluge,
+  .iskustvo li {
+    grid-template-columns: 1fr;
+  }
+
+  .iskustvo li {
+    gap: 0.5rem;
+  }
+
+  .usluge dd {
+    padding-top: 0;
+    border-top: none;
+  }
+
+  .usluge dt {
+    padding-bottom: 0.5rem;
+  }
+}

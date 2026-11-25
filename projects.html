@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Adnan Fetić">
+  <meta name="description" content="Projekti: Khatma, TopStockkks B2B, PikGPT i suplement.ba. Adnan Fetić, Zenica.">
+  <title data-en="Projects | Adnan Fetić">Projekti | Adnan Fetić</title>
+
+  <link rel="icon" href="images/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/jezik.js" defer></script>
+</head>
+<body class="tamna">
+
+  <!-- ZAGLAVLJE -->
+  <header class="zaglavlje">
+    <a class="logo" href="index.html">Adnan Fetić</a>
+
+    <nav class="meni" aria-label="Glavni meni">
+      <ul>
+        <li><a href="index.html" data-en="Home">Početna</a></li>
+        <li><a href="about.html" data-en="About">O meni</a></li>
+        <li><a href="projects.html" aria-current="page" data-en="Projects">Projekti</a></li>
+        <li><a href="contact.html" data-en="Contact">Kontakt</a></li>
+      </ul>
+    </nav>
+
+    <button class="jezik" id="jezik" type="button" aria-label="Promijeni jezik / Change language">
+      <span class="jezik-bs">BS</span>
+      <span class="jezik-en">EN</span>
+    </button>
+  </header>
+
+  <main>
+
+    <!-- NASLOV STRANICE -->
+    <section class="naslov naslov-nizak">
+      <div class="okvir">
+        <h1 data-en="Projects">Projekti</h1>
+        <p data-en="Hover over a project to open it.">Pređi mišem preko projekta da ga otvoriš.</p>
+      </div>
+    </section>
+
+    <!-- GALERIJA: četiri projekta u jednom redu (flexbox) -->
+    <section class="galerija">
+
+      <article class="projekat" tabindex="0">
+        <img src="images/khatma.jpg" alt="Početni ekran aplikacije Khatma: smeđe korice mushafa sa natpisom Otvori mushaf">
+        <div class="projekat-tekst">
+          <p class="vrsta" data-en="Web app">Web aplikacija</p>
+          <h2>Khatma</h2>
+          <div class="detalji">
+            <div>
+              <p class="period" data-en="09/2026 to present">09/2026 do danas</p>
+              <p data-en="A free web app for learning the Quran alone or in a group. I built everything myself with AI tools, from the database to the design. Load test: 100 users at once with zero errors.">Besplatna web aplikacija za lično i grupno učenje Kur'ana. Sve sam napravio sam uz AI alate, od baze do dizajna. Test opterećenja: 100 korisnika odjednom, bez ijedne greške.</p>
+              <ul class="oznake">
+                <li>Next.js</li>
+                <li>TypeScript</li>
+                <li>Supabase</li>
+              </ul>
+              <a class="dugme" href="https://khatma-beta.vercel.app/" target="_blank" rel="noopener" data-en="Open Khatma">Otvori Khatmu</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="projekat" tabindex="0">
+        <img src="images/topstockkks.jpg" alt="Početna stranica TopStockkks webshopa: skladište puno paleta">
+        <div class="projekat-tekst">
+          <p class="vrsta" data-en="B2B webshop">B2B webshop</p>
+          <h2>TopStockkks</h2>
+          <div class="detalji">
+            <div>
+              <p class="period" data-en="07/2026 to present">07/2026 do danas</p>
+              <p data-en="A wholesale webshop, starting with the Croatian market. I joined as a frontend developer, tested the whole quote flow, and showed across more than 270 page loads that a React error no longer happens.">Webshop za veleprodaju, prvo za hrvatsko tržište. U tim sam ušao kao frontend developer, testirao cijeli tok ponude i kroz više od 270 učitavanja dokazao da se jedna React greška više ne javlja.</p>
+              <ul class="oznake">
+                <li>Next.js 15</li>
+                <li>Medusa 2</li>
+                <li>Playwright</li>
+              </ul>
+              <a class="dugme" href="https://topstockkks-shop.vercel.app/" target="_blank" rel="noopener" data-en="Open TopStockkks">Otvori TopStockkks</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="projekat" tabindex="0">
+        <img src="images/pikgpt.jpg" alt="Početna stranica alata PikGPT sa poljem za unos imena shopa">
+        <div class="projekat-tekst">
+          <p class="vrsta" data-en="AI tool">AI alat</p>
+          <h2>PikGPT</h2>
+          <div class="detalji">
+            <div>
+              <p class="period" data-en="07/2026 to 08/2026">07/2026 do 08/2026</p>
+              <p data-en="A free tool for sellers on PIK and OLX: enter the shop name and get a report in under half a minute. I tested the app, adjusted the design, set up the domain and email, and ran the social media pages.">Besplatan alat za prodavače na PIK-u i OLX-u: upišeš ime shopa i za manje od pola minute dobiješ izvještaj. Testirao sam aplikaciju, dotjerao dizajn, postavio domenu i e-mail i vodio društvene mreže.</p>
+              <ul class="oznake">
+                <li>AI</li>
+                <li data-en="Testing">Testiranje</li>
+                <li data-en="Marketing">Marketing</li>
+              </ul>
+              <a class="dugme" href="https://pikgpt.ba/" target="_blank" rel="noopener" data-en="Open PikGPT">Otvori PikGPT</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="projekat" tabindex="0">
+        <img src="images/suplement.jpg" alt="Kategorije proizvoda u prodavnici suplement.ba">
+        <div class="projekat-tekst">
+          <p class="vrsta" data-en="Online store">Online prodavnica</p>
+          <h2>suplement.ba</h2>
+          <div class="detalji">
+            <div>
+              <p class="period" data-en="06/2026 to 07/2026">06/2026 do 07/2026</p>
+              <p data-en="An online store on Shopify for a sports supplement shop from Sarajevo, with delivery across Bosnia and Herzegovina. I did the design and setup of the store, together with my colleague Mahir.">Shopify prodavnica za shop sportskih suplemenata iz Sarajeva, sa dostavom po cijeloj BiH. Uradio sam dizajn i postavku prodavnice, u saradnji sa kolegom Mahirom.</p>
+              <ul class="oznake">
+                <li>Shopify</li>
+                <li data-en="Web design">Web dizajn</li>
+                <li>eCommerce</li>
+              </ul>
+              <a class="dugme" href="https://suplement.ba/" target="_blank" rel="noopener" data-en="Open suplement.ba">Otvori suplement.ba</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+  </main>
+
+  <!-- PODNOŽJE -->
+  <footer class="podnozje">
+    <div class="okvir">
+      <p>&copy; 2026 Adnan Fetić, Zenica</p>
+      <ul>
+        <li><a href="mailto:adnan.ba.fetic@gmail.com">E-mail</a></li>
+        <li><a href="https://www.linkedin.com/in/adnanfetic" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/Adnan19f" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>

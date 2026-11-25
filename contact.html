@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Adnan Fetić">
+  <meta name="description" content="Kontakt: e-mail, LinkedIn, GitHub i kontakt forma. Adnan Fetić, Zenica.">
+  <title data-en="Contact | Adnan Fetić">Kontakt | Adnan Fetić</title>
+
+  <link rel="icon" href="images/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/jezik.js" defer></script>
+  <script src="js/kontakt.js" defer></script>
+</head>
+<body>
+
+  <!-- ZAGLAVLJE -->
+  <header class="zaglavlje">
+    <a class="logo" href="index.html">Adnan Fetić</a>
+
+    <nav class="meni" aria-label="Glavni meni">
+      <ul>
+        <li><a href="index.html" data-en="Home">Početna</a></li>
+        <li><a href="about.html" data-en="About">O meni</a></li>
+        <li><a href="projects.html" data-en="Projects">Projekti</a></li>
+        <li><a href="contact.html" aria-current="page" data-en="Contact">Kontakt</a></li>
+      </ul>
+    </nav>
+
+    <button class="jezik" id="jezik" type="button" aria-label="Promijeni jezik / Change language">
+      <span class="jezik-bs">BS</span>
+      <span class="jezik-en">EN</span>
+    </button>
+  </header>
+
+  <main>
+
+    <!-- NASLOV STRANICE -->
+    <section class="naslov">
+      <div class="okvir">
+        <h1 data-en="Contact">Kontakt</h1>
+      </div>
+    </section>
+
+    <section class="sekcija okvir kontakt">
+
+      <!-- KONTAKT PODACI -->
+      <div>
+        <p class="istaknuto" data-en="Looking for a developer, a tester, or just want to ask something? Send me a message.">Tražiš developera, testera ili samo želiš nešto pitati? Pošalji mi poruku.</p>
+        <dl class="podaci">
+          <dt>E-mail</dt>
+          <dd><a href="mailto:adnan.ba.fetic@gmail.com">adnan.ba.fetic@gmail.com</a></dd>
+          <dt>LinkedIn</dt>
+          <dd><a href="https://www.linkedin.com/in/adnanfetic" target="_blank" rel="noopener">linkedin.com/in/adnanfetic</a></dd>
+          <dt>GitHub</dt>
+          <dd><a href="https://github.com/Adnan19f" target="_blank" rel="noopener">github.com/Adnan19f</a></dd>
+          <dt data-en="Phone">Telefon</dt>
+          <dd><a href="tel:+38761628871">061&nbsp;628&nbsp;871</a></dd>
+          <dt data-en="Location">Lokacija</dt>
+          <dd data-en="Zenica, Bosnia and Herzegovina">Zenica, Bosna i Hercegovina</dd>
+        </dl>
+      </div>
+
+      <!-- KONTAKT FORMA -->
+      <form class="forma" id="forma">
+        <div class="polje">
+          <label for="ime" data-en="Full name">Ime i prezime</label>
+          <input type="text" id="ime" name="ime" autocomplete="name" required aria-describedby="greska-ime">
+          <p class="greska" id="greska-ime" hidden data-en="Enter your full name.">Upiši ime i prezime.</p>
+        </div>
+
+        <div class="polje">
+          <label for="email" data-en="E-mail address">E-mail adresa</label>
+          <input type="email" id="email" name="email" autocomplete="email" required pattern="[^@\s]+@[^@\s]+\.[^@\s]+" aria-describedby="greska-email">
+          <p class="greska" id="greska-email" hidden data-en="Enter a valid e-mail address, for example name@example.com.">Upiši ispravnu e-mail adresu, na primjer ime@primjer.com.</p>
+        </div>
+
+        <div class="polje">
+          <label for="predmet" data-en="Subject">Predmet poruke</label>
+          <input type="text" id="predmet" name="predmet" required aria-describedby="greska-predmet">
+          <p class="greska" id="greska-predmet" hidden data-en="Enter a subject.">Upiši predmet poruke.</p>
+        </div>
+
+        <div class="polje">
+          <label for="poruka" data-en="Message">Tekst poruke</label>
+          <textarea id="poruka" name="poruka" rows="6" required aria-describedby="greska-poruka"></textarea>
+          <p class="greska" id="greska-poruka" hidden data-en="Write your message.">Napiši poruku.</p>
+        </div>
+
+        <button class="dugme" type="submit" data-en="Send message">Pošalji poruku</button>
+
+        <!-- Ova poruka se prikaže tek kad su sva polja ispravna -->
+        <div class="uspjeh" id="uspjeh" role="status" hidden>
+          <p data-en="Everything is filled in correctly. This form has no server, so one more click sends the message from your e-mail app.">Sve je ispravno popunjeno. Forma nema server, pa poruku šalješ još jednim klikom iz svog e-mail programa.</p>
+          <a class="dugme" id="posalji-mail" href="mailto:adnan.ba.fetic@gmail.com" data-en="Open e-mail app">Otvori e-mail program</a>
+        </div>
+      </form>
+
+    </section>
+
+  </main>
+
+  <!-- PODNOŽJE -->
+  <footer class="podnozje">
+    <div class="okvir">
+      <p>&copy; 2026 Adnan Fetić, Zenica</p>
+      <ul>
+        <li><a href="mailto:adnan.ba.fetic@gmail.com">E-mail</a></li>
+        <li><a href="https://www.linkedin.com/in/adnanfetic" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/Adnan19f" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Adnan Fetić">
+  <meta name="description" content="O meni: vještine, iskustvo, obrazovanje i interesi. Adnan Fetić, Zenica.">
+  <title data-en="About | Adnan Fetić">O meni | Adnan Fetić</title>
+
+  <link rel="icon" href="images/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/jezik.js" defer></script>
+</head>
+<body>
+
+  <!-- ZAGLAVLJE -->
+  <header class="zaglavlje">
+    <a class="logo" href="index.html">Adnan Fetić</a>
+
+    <nav class="meni" aria-label="Glavni meni">
+      <ul>
+        <li><a href="index.html" data-en="Home">Početna</a></li>
+        <li><a href="about.html" aria-current="page" data-en="About">O meni</a></li>
+        <li><a href="projects.html" data-en="Projects">Projekti</a></li>
+        <li><a href="contact.html" data-en="Contact">Kontakt</a></li>
+      </ul>
+    </nav>
+
+    <button class="jezik" id="jezik" type="button" aria-label="Promijeni jezik / Change language">
+      <span class="jezik-bs">BS</span>
+      <span class="jezik-en">EN</span>
+    </button>
+  </header>
+
+  <main>
+
+    <!-- NASLOV STRANICE -->
+    <section class="naslov">
+      <div class="okvir">
+        <h1 data-en="About me">O meni</h1>
+      </div>
+    </section>
+
+    <!-- TEKST O MENI + INTERESI -->
+    <section class="sekcija okvir dvije-kolone">
+      <article>
+        <p class="istaknuto" data-en="I am Adnan from Zenica. I am reliable and punctual, I learn fast, and I work equally well on my own and in a team.">Ja sam Adnan iz Zenice. Pouzdan sam i tačan, brzo učim i jednako dobro radim sam i u timu.</p>
+        <p data-en="Next to my studies I also work in production, so I know well what deadlines, discipline and responsibility mean.">Uz studij radim i u proizvodnji, pa dobro znam šta znače rokovi, disciplina i odgovornost.</p>
+        <p data-en="I joined CodeFactory as an intern in April 2026, and since September I have worked as a full stack developer and mentor. I work mostly on the frontend in Next.js and TypeScript, with Supabase for the database and backend.">U CodeFactory sam došao na praksu u aprilu 2026, a od septembra radim kao full stack developer i mentor. Najviše radim na frontendu u Next.js i TypeScriptu, uz Supabase za bazu i backend.</p>
+        <p data-en="I build apps with AI tools, and I am only a beginner in programming languages. The projects behind me are real, they work, and you can open them on the Projects page.">Aplikacije pravim uz AI alate, a u programskim jezicima sam tek početnik. Projekti iza mene su stvarni, rade i možeš ih otvoriti na stranici Projekti.</p>
+        <p data-en="I want to be equally good at frontend, databases and backend, and one day build my own products or have my own company. I also want to become a high school teacher. I learn and build something new every day.">Želim jednako dobro raditi frontend, bazu i backend, a jednog dana graditi svoje proizvode ili imati svoju firmu. Želim postati i profesor u srednjoj školi. Svaki dan učim i gradim nešto novo.</p>
+      </article>
+
+      <aside>
+        <h2 data-en="Interests and hobbies">Interesi i hobiji</h2>
+        <ul class="lista">
+          <li data-en="Reading books">Čitanje knjiga</li>
+          <li data-en="Basketball">Košarka</li>
+          <li data-en="Personal growth">Lični razvoj</li>
+          <li data-en="Learning Arabic">Učenje arapskog jezika</li>
+        </ul>
+      </aside>
+    </section>
+
+    <!-- VJEŠTINE: element progress pokazuje nivo -->
+    <section class="vjestine">
+      <div class="okvir">
+        <h2 data-en="Skills">Vještine</h2>
+
+        <ul class="nivoi">
+          <li>
+            <label for="v1" data-en="Web design">Web dizajn</label>
+            <span data-en="Very good">Vrlo dobro</span>
+            <progress id="v1" value="80" max="100"></progress>
+          </li>
+          <li>
+            <label for="v2">Shopify</label>
+            <span data-en="Very good">Vrlo dobro</span>
+            <progress id="v2" value="80" max="100"></progress>
+          </li>
+          <li>
+            <label for="v3">Supabase</label>
+            <span data-en="Very good">Vrlo dobro</span>
+            <progress id="v3" value="80" max="100"></progress>
+          </li>
+          <li>
+            <label for="v4">SEO, AEO</label>
+            <span data-en="Very good">Vrlo dobro</span>
+            <progress id="v4" value="80" max="100"></progress>
+          </li>
+          <li>
+            <label for="v5">Git, GitHub</label>
+            <span data-en="Very good">Vrlo dobro</span>
+            <progress id="v5" value="80" max="100"></progress>
+          </li>
+          <li>
+            <label for="v6">Figma, Canva</label>
+            <span data-en="Very good">Vrlo dobro</span>
+            <progress id="v6" value="80" max="100"></progress>
+          </li>
+          <li>
+            <label for="v7" data-en="Software testing">Testiranje softvera</label>
+            <span data-en="Intermediate">Srednje</span>
+            <progress id="v7" value="60" max="100"></progress>
+          </li>
+          <li>
+            <label for="v8" data-en="Make.com, automation">Make.com, automatizacija</label>
+            <span data-en="Intermediate">Srednje</span>
+            <progress id="v8" value="60" max="100"></progress>
+          </li>
+          <li>
+            <label for="v9">Next.js</label>
+            <span data-en="Beginner, with AI">Početno, uz AI</span>
+            <progress id="v9" value="20" max="100"></progress>
+          </li>
+          <li>
+            <label for="v10">TypeScript</label>
+            <span data-en="Beginner, with AI">Početno, uz AI</span>
+            <progress id="v10" value="20" max="100"></progress>
+          </li>
+        </ul>
+
+        <div class="dvije-kolone">
+          <div>
+            <h3 data-en="Personal skills">Lične vještine</h3>
+            <ul class="lista">
+              <li data-en="Reliability and punctuality">Pouzdanost i tačnost</li>
+              <li data-en="Fast learning and self-improvement">Brzo učenje i samorazvoj</li>
+              <li data-en="Teamwork and independent work">Timski i samostalan rad</li>
+              <li data-en="Mentoring and communication">Mentorstvo i komunikacija</li>
+            </ul>
+          </div>
+          <div>
+            <h3 data-en="Languages">Jezici</h3>
+            <ul class="lista">
+              <li data-en="Bosnian: native">Bosanski: maternji</li>
+              <li data-en="English: professional working proficiency">Engleski: napredni, radni nivo</li>
+              <li data-en="Arabic: elementary">Arapski: osnovni</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ISKUSTVO: numerisana lista (ol) -->
+    <section class="sekcija okvir">
+      <h2 data-en="Experience">Iskustvo</h2>
+      <ol class="iskustvo">
+        <li>
+          <p class="period" data-en="09/2026 to present">09/2026 do danas</p>
+          <div>
+            <h3 data-en="Full Stack Developer and mentor, CodeFactory">Full Stack Developer i mentor, CodeFactory</h3>
+            <p data-en="Work across the stack, most often on the frontend: Next.js, TypeScript, Supabase. Mentoring students and new team members, websites and online stores for clients with SEO and AEO, automations with Make.com and AI tools.">Rad kroz cijeli stack, najčešće na frontendu: Next.js, TypeScript, Supabase. Mentorstvo studentima i novim članovima tima, web stranice i online prodavnice za klijente uz SEO i AEO, automatizacije sa Make.com i AI alatima.</p>
+          </div>
+        </li>
+        <li>
+          <p class="period" data-en="2024 to present">2024 do danas</p>
+          <div>
+            <h3 data-en="Pellet production worker, Zenica">Radnik u proizvodnji peleta, Zenica</h3>
+            <p data-en="Packing, equipment maintenance and loading, with a high standard of quality and safety.">Pakiranje, održavanje opreme i utovar, uz visok standard kvaliteta i sigurnosti.</p>
+          </div>
+        </li>
+        <li>
+          <p class="period" data-en="04/2026 to 08/2026">04/2026 do 08/2026</p>
+          <div>
+            <h3 data-en="Student Developer (internship), CodeFactory">Student Developer (praksa), CodeFactory</h3>
+            <p data-en="Work on real client projects, software testing and automation of work processes.">Rad na stvarnim klijentskim projektima, testiranje softvera i automatizacija radnih procesa.</p>
+          </div>
+        </li>
+        <li>
+          <p class="period">2026</p>
+          <div>
+            <h3 data-en="Sales assistant, Garden centar Zenica">Trgovac, Garden centar Zenica</h3>
+            <p data-en="Receiving and storing goods, working with customers and checkout, forklift and pallet truck.">Prijem i skladištenje robe, rad sa kupcima i naplata, viljuškar i paletar.</p>
+          </div>
+        </li>
+        <li>
+          <p class="period">2025</p>
+          <div>
+            <h3 data-en="Freelancer, online work">Freelancer, online poslovi</h3>
+            <p data-en="Various projects on freelance platforms, communication with clients in English.">Različiti projekti na freelance platformama, komunikacija sa klijentima na engleskom.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- OBRAZOVANJE: tabela -->
+    <section class="sekcija okvir">
+      <h2 data-en="Education">Obrazovanje</h2>
+      <div class="tabela-okvir">
+        <table>
+          <caption data-en="Schools and certificates">Škole i certifikati</caption>
+          <thead>
+            <tr>
+              <th data-en="Period">Period</th>
+              <th data-en="Institution">Ustanova</th>
+              <th data-en="Program">Program</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-en="10/2026 to 10/2029">10/2026 do 10/2029</td>
+              <td data-en="University of Zenica, Faculty of Engineering and Natural Sciences">Univerzitet u Zenici, Fakultet inženjerstva i prirodnih nauka</td>
+              <td data-en="Electrical Engineering and Information Technologies (bachelor)">Elektrotehnika i informacione tehnologije (bachelor)</td>
+            </tr>
+            <tr>
+              <td>2025</td>
+              <td data-en="Technical School Zenica">JU Tehnička škola Zenica</td>
+              <td data-en="Four-year secondary school, electrical engineering">Četverogodišnja srednja škola, oblast elektrotehnike</td>
+            </tr>
+            <tr>
+              <td>2025</td>
+              <td>Softify Bootcamp, Zenica</td>
+              <td data-en="Certificate: web apps on the Bubble platform (no code)">Certifikat: izrada web aplikacija na Bubble platformi (no code)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- PODNOŽJE -->
+  <footer class="podnozje">
+    <div class="okvir">
+      <p>&copy; 2026 Adnan Fetić, Zenica</p>
+      <ul>
+        <li><a href="mailto:adnan.ba.fetic@gmail.com">E-mail</a></li>
+        <li><a href="https://www.linkedin.com/in/adnanfetic" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/Adnan19f" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>
